@@ -21,10 +21,13 @@ dependencies = [
     "pymongo-amplidata>=3.6.0.post1",
     "pytest>=9.0.2",
     "pytest-httpserver>=1.1.3",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.21",
     "pyyaml>=6.0.3",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.45",
+    "typing-inspect>=0.9.0",
     "ucimlrepo>=0.0.7",
     "uvicorn>=0.38.0",
 ]
