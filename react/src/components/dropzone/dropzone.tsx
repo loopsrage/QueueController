@@ -17,7 +17,6 @@ export function DropzoneElement({
                                     maxFiles
                                 }: DropzoneElementProps): ReactElement {
 
-    // 2. INITIALIZE HOOK
     const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
         onDrop,
         accept,

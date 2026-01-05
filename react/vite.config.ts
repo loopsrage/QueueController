@@ -19,14 +19,16 @@ export default defineConfig({
     },
     plugins: [react(),
         // Cast to 'any' to bypass the 'enforce' type mismatch
-        '@hey-api/client-fetch',
-        '@hey-api/typescript',
-        '@hey-api/sdk',
         (heyApiPlugin as any)({
             config: {
                 input: 'http://localhost:8000/openapi.json',
                 output: './src/apis/client',
                 client: '@hey-api/client-fetch',
+                plugins: [
+                    '@hey-api/client-fetch',
+                    '@hey-api/typescript',
+                    '@hey-api/sdk',
+                ]
             },
         })],
 });

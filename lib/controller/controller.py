@@ -1,5 +1,10 @@
 import threading
+import sys
 
+
+
+def gil_enabled() -> bool:
+    return sys._is_gil_enabled()
 # Equivalent to the Go 'Controller' struct and its methods
 class Controller:
     def __init__(self, interval: float, start_now: bool):
@@ -10,6 +15,8 @@ class Controller:
         self._tick_event = threading.Event()
         self._running = True
         self._setup_timer(1 if start_now else interval)
+        if not gil_enabled():
+            pass
 
     def _setup_timer(self, current_interval):
         # Stop the old timer if it exists

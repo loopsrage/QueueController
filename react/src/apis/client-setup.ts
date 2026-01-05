@@ -7,6 +7,8 @@ client.setConfig({
     },
 });
 
+
+
 client.interceptors.response.use((response) => {
     console.log('API Request Finished:', response.url);
     // You must return the response to continue the chain
