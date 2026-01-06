@@ -7,14 +7,8 @@ client.setConfig({
     },
 });
 
-client.interceptors.response.use(
-    (response: { url: never; }) => {
-        console.log('API Request Finished:', response.url);
-        return response;
-    },
-    (error: never) => {
-        console.error('API Network Error:' error);
-        throw error;
-    }
-);
-
+client.interceptors.response.use((response) => {
+    console.log('API Request Finished:', response.url);
+    // You must return the response to continue the chain
+    return response;
+});

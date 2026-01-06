@@ -14,7 +14,6 @@ export default defineConfig({
             // Restrict file system access to the project root and one specific shared folder
             allow: [
                 path.resolve(__dirname),
-                path.resolve(__dirname, "./local_utils"),
             ],
         },
     },
