@@ -1,4 +1,5 @@
 import logging
+import math
 import uuid
 from concurrent.futures import ThreadPoolExecutor, Future
 from typing import Callable, Union, Iterable
@@ -39,7 +40,11 @@ def stop_pipeline(nodes: list[QueueController]) -> None:
         node.close()
 
 def default_queue_action(queue_data: QueueData) -> None:
-    pass
+    total = 0
+    for i in range(1, 900):
+        total += i * 2
+        if total % 1000 == 0:
+            pass
 
 def new_controller(identity: str = None, executor: ThreadPoolExecutor = None, action: Callable[[QueueData], Union[Exception, None]] = None, **kwargs) -> QueueController:
     if action is None:
