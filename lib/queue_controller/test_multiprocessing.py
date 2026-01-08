@@ -7,9 +7,9 @@ from functools import partial
 import pytest
 
 from lib.index import Index
-from helpers import QueueData, link_pipeline, stop_pipeline, start_pipeline, gather_results, \
-    new_controller
 from lib.onceler import Onceler
+from lib.queue_controller.helpers import link_pipeline, new_controller, start_pipeline, stop_pipeline, gather_results
+from lib.queue_controller.queueData import QueueData
 from lib.stats_collector.stats_collector import aggregate_action
 
 once = Onceler()

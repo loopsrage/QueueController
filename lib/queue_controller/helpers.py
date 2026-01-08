@@ -39,7 +39,7 @@ def stop_pipeline(nodes: list[QueueController]) -> None:
         node.close()
 
 def default_queue_action(queue_data: QueueData) -> None:
-    print(f"{queue_data.trace()}")
+    pass
 
 def new_controller(identity: str = None, executor: ThreadPoolExecutor = None, action: Callable[[QueueData], Union[Exception, None]] = None, **kwargs) -> QueueController:
     if action is None:
